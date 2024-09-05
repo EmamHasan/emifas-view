@@ -22,7 +22,7 @@ const SignUp: React.FC<SignInProps> = ({handleAuthPage}) => {
         <h6>or Just..</h6>
         <span className="dashh" ></span>
       </div>
-      <h4>Passwordless sign-up with Email</h4>
+      <h4 onClick={()=>handleAuthPage("passwordlessUp")}>Passwordless sign-up with Email</h4>
       <h4 className="already" onClick={()=>handleAuthPage("sign-in")}>Already have an account?</h4>
     </div>
   );

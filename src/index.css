@@ -13,7 +13,7 @@ body{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
 }
 .titleName{
-    height: 10vh;
+    height: 15vh;
     color: white;
     display: flex;
     align-items: end;
@@ -21,7 +21,8 @@ body{
     font-family:'Courier New', monospace;
 }
 .titleName h1{
-    font-size: 2rem ;
+    font-size: 4rem;
+    
 }
 .authPage{
     width: 90vw;
@@ -77,9 +78,6 @@ body{
     place-items: center;
     height: 35px;
     margin-top: 20px;
-    /* margin-bottom: 20px; */
-
-
 }
 
 .platform{
@@ -103,6 +101,30 @@ body{
     grid-column: 3/4;
 
 }
+
+@media (max-width:700px) {
+    .auth-platforms{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+        place-items: center;
+        gap: 10px;
+        height: auto;
+        margin-top: 20px;
+    }
+    .google{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        
+    }
+    .github{
+        grid-row: 2/3;
+        grid-column: 1/2;
+    
+    }
+    
+}
 .logo{
 
 }
@@ -123,13 +145,70 @@ body{
 }
 .authCard h4{
     font-size: 0.8rem;
+    user-select: none;
     
 }
 .already{
     margin-top: 1.5rem;
+    user-select: none;
 }
 .authCard h4:hover{
     color: steelblue;
     cursor: pointer;
     
+}
+
+.magicFields{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin: 10px 10px;
+}
+.enterEmail{
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 10px;
+    color: #000000;
+    justify-self: center;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border: 3px solid rgb(36, 23, 48);
+}
+.enterEmail:focus{
+    border: 3px solid rgb(174, 117, 231);
+}
+.sendMagic{
+    border-radius: 10px;
+    background-color: rgb(174, 117, 231);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 2.5rem;
+    padding: 10px;
+    color: #000000;
+    justify-self: center;
+    width: 100%;
+    border-left: 2px solid;
+    box-sizing: border-box;
+    user-select: none;
+}
+.sendMagic:hover{
+    background-color: rgb(204, 184, 224);
+}
+.sendMagic:active{
+    border: 3px solid rgb(215, 228, 197);
+    background-color: greenyellow;
+    transition: background-color 0.2s ease-in-out;
+    height: 2.45rem;
+    width:97%;
+}
+.sendMagic:disabled{
+    background-color: rgba(128, 128, 128, 0.411);
+    user-select: none;
+    border: none;
+    transition: none;
+    height: 2.5rem;
+    width: 100%;
 }
